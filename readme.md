@@ -1,0 +1,1 @@
+Autor: Piotr Sekuła.
