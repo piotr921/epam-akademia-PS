@@ -1,5 +1,6 @@
 package com.epam.game;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +11,11 @@ public class Main {
         int startingPlayer = readInput("Select which player will start\n0 - 'O'\n1 - 'X'");
 
         Board board = new Board(startingPlayer);
+
+        while (board.contiuneGame) {
+            displayBoard(board);
+            board.endGame();
+        }
     }
 
     private static int readInput(String message) {
@@ -21,5 +27,19 @@ public class Main {
 
     private static void displayBoard(Board board){
 
+        for (List<String> row : board.getFields()) {
+            System.out.println();
+            for (String mark : row) {
+                displayMark(mark);
+            }
+        }
+    }
+
+    private static void displayMark(String mark) {
+        if (mark != null) {
+            System.out.print("" + mark + "");
+        } else {
+            System.out.print(".");
+        }
     }
 }

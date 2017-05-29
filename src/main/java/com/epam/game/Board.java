@@ -13,6 +13,8 @@ public class Board {
 
     private List<List<String>> fields;
 
+    boolean contiuneGame;
+
     // region getters and setter
     public List<Player> getPlayers() {
         return players;
@@ -44,17 +46,12 @@ public class Board {
         this.players = initPlayers(startingPlayer);
         this.checker = new ResultChecker();
         this.fields = initBoard(boardSize);
+        this.contiuneGame = true;
     }
 
-/*    public Board getBoard(int startingPlayer) {
-
-        Board board = new Board();
-        board.setPlayers(initPlayers(startingPlayer));
-        board.setChecker(new ResultChecker());
-        board.setFields(initBoard(boardSize));
-
-        return board;
-    }*/
+    public void endGame(){
+        this.contiuneGame = false;
+    }
 
     private ArrayList<Player> initPlayers(int startingPlayer) {
 
