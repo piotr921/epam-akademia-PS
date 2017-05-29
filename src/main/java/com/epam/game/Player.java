@@ -1,0 +1,10 @@
+package com.epam.game;
+
+public class Player {
+
+    private String mark;
+
+    public Player(String mark) {
+        this.mark = mark;
+    }
+}
