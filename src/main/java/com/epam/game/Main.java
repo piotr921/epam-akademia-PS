@@ -14,6 +14,8 @@ public class Main {
             CommunicationHandler.displayBoard(board);
             board.makeMove(playerTurnCounter % 2);
             playerTurnCounter++;
+
+            // change when validataion will be complete
             if (playerTurnCounter > 9) {
                 board.endGame();
             }

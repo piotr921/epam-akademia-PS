@@ -10,4 +10,7 @@ class ResultChecker {
         String checked = row.get(field.getColumn());
         return checked != null;
     }
+
+    //boolean checkRows(ArrayList<ArrayList<String>> fields){}
+    //boolean checkColumn(ArrayList<ArrayList<String>> fields) {}
 }

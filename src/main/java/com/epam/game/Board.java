@@ -101,6 +101,8 @@ public class Board {
             System.out.println("This field is not free, select another one");
         }
         setUpField(userField);
+
+        // add validation here
     }
 
     void setUpField(Field fieldToSet){
