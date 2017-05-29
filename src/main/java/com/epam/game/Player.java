@@ -7,4 +7,8 @@ public class Player {
     public Player(String mark) {
         this.mark = mark;
     }
+
+    public String getMark() {
+        return mark;
+    }
 }
