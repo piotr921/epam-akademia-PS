@@ -90,4 +90,15 @@ public class Board {
 
         return board;
     }
+
+    void makeMove(int playerId){
+
+        Field userField;
+        boolean fieldIsOccupied = true;
+        while (fieldIsOccupied) {
+            userField = players.get(playerId).selectField();
+            fieldIsOccupied = checker.checkIfFieldIsOccupied(fields, userField);
+        }
+        //board.setUpField(userField);
+    }
 }

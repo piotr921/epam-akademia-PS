@@ -12,9 +12,7 @@ public class Main {
 
         while (board.contiuneGame) {
             CommunicationHandler.displayBoard(board);
-            Field field = board.getPlayers().get(playerTurnCounter % 2).selectField();
-            System.out.println(field.getColumn());
-            System.out.println(field.getRow());
+            board.makeMove(playerTurnCounter % 2);
             board.endGame();
         }
     }
