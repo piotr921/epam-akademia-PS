@@ -98,6 +98,7 @@ public class Board {
         while (fieldIsOccupied) {
             userField = players.get(playerId).selectField();
             fieldIsOccupied = checker.checkIfFieldIsOccupied(fields, userField);
+            System.out.println("This field is not free, select another one");
         }
         setUpField(userField);
     }

@@ -13,7 +13,7 @@ class CommunicationHandler {
             System.out.println(message);
             while (!scanner.hasNextInt()) {
                 System.out.println("That's not a number!");
-                scanner.next(); // this is important!
+                scanner.next();
             }
             number = scanner.nextInt();
         } while (!(number <= max) && (number >= min));
