@@ -5,16 +5,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ResultCheckerTest {
 
-    private List<List<String>> fields = new ArrayList<>();
+    private ArrayList<ArrayList<String>> fields = new ArrayList<>();
 
     @Before
     public void init() {
 
-        List<String> row = new ArrayList<>();
+        ArrayList<String> row = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             row.add("X");
         }
@@ -32,7 +31,7 @@ public class ResultCheckerTest {
 
         ResultChecker checker = new ResultChecker();
 
-        List<String> rowOfFields = fields.get(row);
+        ArrayList<String> rowOfFields = fields.get(row);
         rowOfFields.set(col, null);
         fields.set(row, rowOfFields);
 

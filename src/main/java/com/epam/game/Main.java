@@ -13,7 +13,10 @@ public class Main {
         while (board.contiuneGame) {
             CommunicationHandler.displayBoard(board);
             board.makeMove(playerTurnCounter % 2);
-            board.endGame();
+            playerTurnCounter++;
+            if (playerTurnCounter > 9) {
+                board.endGame();
+            }
         }
     }
 

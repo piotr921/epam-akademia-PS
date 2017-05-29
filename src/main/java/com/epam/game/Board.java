@@ -11,7 +11,7 @@ public class Board {
     private List<Player> players;
     private ResultChecker checker;
 
-    private List<List<String>> fields;
+    private ArrayList<ArrayList<String>> fields;
 
     boolean contiuneGame;
 
@@ -32,11 +32,11 @@ public class Board {
         this.checker = checker;
     }
 
-    public List<List<String>> getFields() {
+    public ArrayList<ArrayList<String>> getFields() {
         return fields;
     }
 
-    public void setFields(List<List<String>> fields) {
+    public void setFields(ArrayList<ArrayList<String>> fields) {
         this.fields = fields;
     }
     // endregion
@@ -75,11 +75,11 @@ public class Board {
         return players;
     }
 
-    private List<List<String>> initBoard(int boardSize) {
+    private ArrayList<ArrayList<String>> initBoard(int boardSize) {
 
-        List<List<String>> board = new ArrayList<>();
+        ArrayList<ArrayList<String>> board = new ArrayList<>();
 
-        List<String> row = new ArrayList<>();
+        ArrayList<String> row = new ArrayList<>();
         for (int i = 0; i <boardSize ; i++) {
             row.add(null);
         }
@@ -93,12 +93,24 @@ public class Board {
 
     void makeMove(int playerId){
 
-        Field userField;
+        Field userField = null;
         boolean fieldIsOccupied = true;
         while (fieldIsOccupied) {
             userField = players.get(playerId).selectField();
             fieldIsOccupied = checker.checkIfFieldIsOccupied(fields, userField);
         }
-        //board.setUpField(userField);
+        setUpField(userField);
+    }
+
+    void setUpField(Field fieldToSet){
+
+        ArrayList<String> oldRow = this.fields.get(fieldToSet.getRow());
+
+        ArrayList<String> newRow = new ArrayList<>();
+        for (String s : oldRow) {
+            newRow.add(s);
+        }
+        newRow.set(fieldToSet.getColumn(), fieldToSet.getPlayerMark());
+        this.fields.set(fieldToSet.getRow(), newRow);
     }
 }
