@@ -23,7 +23,7 @@ public class ResultCheckerTest {
     }
 
     @Test
-    public void shouldReturnTrueForFreeField() {
+    public void shouldReturnFalseForFreeField() {
 
         // Given
         int row = 1;
@@ -39,11 +39,11 @@ public class ResultCheckerTest {
         boolean b = checker.checkIfFieldIsOccupied(fields, new Field(row, col, "X"));
 
         // Then
-        Assert.assertTrue(b);
+        Assert.assertFalse(b);
     }
 
     @Test
-    public void shouldReturnFalseForOccupiedField() {
+    public void shouldReturnTrueForOccupiedField() {
 
         // Given
         int row = 1;
@@ -54,6 +54,6 @@ public class ResultCheckerTest {
         boolean b = checker.checkIfFieldIsOccupied(fields, new Field(row, col, "X"));
 
         // Then
-        Assert.assertFalse(b);
+        Assert.assertTrue(b);
     }
 }

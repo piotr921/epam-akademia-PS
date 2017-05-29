@@ -1,5 +1,6 @@
 package com.epam.game;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,5 +32,10 @@ public class SetUpFieldTest {
 
         // Then
         board.setUpField(field);
+
+        // When
+        ArrayList<String> list = board.getFields().get(0);
+        String toCheck = list.get(0);
+        Assert.assertEquals("$", toCheck);
     }
 }
